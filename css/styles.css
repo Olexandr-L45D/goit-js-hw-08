@@ -44,30 +44,30 @@ body {
   .gallery {
     display: flex;
     list-style: none;
-    width: 408px;
+    width: 1400px;
     padding: 0px;
     background-color: white;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     border-color: black;
-    margin: 24px;
+    margin: 10px;
   }
   
   .gallery-item {
     display: flex;
     list-style: none;
-    width: 408px;
+    width: 370px;
     padding: 0px;
     background-color: white;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     border-color: black;
-    margin: 24px;
+    margin: 12px;
   }
   .gallery-item img {
     width: 360px;
     height: 200px;
-    border-radius: 5px;
-    margin: 5px;
+    border-radius: 1px;
+    margin: 1px;
   }
   

@@ -72,11 +72,11 @@ const images = [
     event.preventDefault()
     if (event.target === event.currentTarget) {
         return;
-    } //console.log(event.target);
+    } 
     console.log(target);
 
    const instance = basicLightbox.create(
-     `<img class="gallery"
+     `<img class="gallery-image"
        data-source="${galleryContainer.original}"
       alt="${galleryContainer.description}"
     />`)
@@ -89,12 +89,11 @@ const images = [
   <a class="gallery-link" href="large-image.jpg">
     <img
       class="gallery-image"
-      src="${preview}.jpg"
+      src="${preview}"
       data-source="${original}"
       alt="${description}"
     />
   </a>
-</li>
-         `).join("");
+</li> `).join("");
  }
  console.log(createMarkup());
