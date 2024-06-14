@@ -41,7 +41,7 @@ body {
     list-style: none;
   }
   
-  .gallery-item {
+  .gallery {
     display: flex;
     list-style: none;
     width: 408px;
@@ -52,14 +52,14 @@ body {
     border-color: black;
     margin: 24px;
   }
-  .gallery-item img {
+  .gallery img {
     width: 360px;
     height: 200px;
     border-radius: 5px;
     margin: 5px;
   }
   
-  .gallery-item p {
+  .gallery p {
     font-size: 1rem;
     margin: 0px;
   }
