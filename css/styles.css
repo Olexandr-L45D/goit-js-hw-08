@@ -24,13 +24,6 @@ body {
     padding: 0;
     margin: 0;
   }
-  .container {
-    min-width: 320px;
-    padding: 0px;
-    margin: 0 auto;
-    max-width: 1440px;
-    align-items: center;
-  }
     img {
       display: flex;
       max-width: 100%;
@@ -45,7 +38,6 @@ body {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    user-select: none;
     list-style: none;
   }
   
@@ -59,7 +51,6 @@ body {
     border-radius: 5px;
     border-color: black;
     margin: 24px;
-    counter-increment: my-counter;
   }
   .gallery-item img {
     width: 360px;
