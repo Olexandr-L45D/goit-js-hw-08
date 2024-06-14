@@ -77,7 +77,6 @@ const images = [
 
    const instance = basicLightbox.create(
      `<img class="gallery"
-      src="${preview}"
        data-source="${original}"
       alt="${description}"
     />`)
