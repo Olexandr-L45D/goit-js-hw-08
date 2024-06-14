@@ -64,26 +64,31 @@ const images = [
   },
 ];
 
- const galleryContainer = document.querySelector('.gallery-item');
+ const galleryContainer = document.querySelector('.gallery');
   galleryContainer.addEventListener('click', handlerImageClick);
   galleryContainer.insertAdjacentHTML("afterbegin", createMarkup(images));
   
    function handlerImageClick(event) {
+    event.preventDefault()
     if (event.target === event.currentTarget) {
         return;
     } //console.log(event.target);
     console.log(target);
 
    const instance = basicLightbox.create(
-     document.querySelector('.gallery-item'));
+     `<img class="gallery"
+      src="${preview}"
+       data-source="${original}"
+      alt="${description}"
+    />`)
    instance.show();
 }
 
    function createMarkup(arr) {
     return arr.map(({ preview, original, description }) => `
-        <li class="gallery-item">
+        <li class="gallery">
   <a class="gallery-link" href="large-image.jpg">
-    <img class="gallery-image"
+    <img class="gallery"
       src="${preview}"
        data-source="${original}"
       alt="${description}"
