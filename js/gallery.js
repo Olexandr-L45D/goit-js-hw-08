@@ -86,14 +86,16 @@ const images = [
 
    function createMarkup(arr) {
     return arr.map(({ preview, original, description }) => `
-        <li class="gallery">
+    <li class="gallery-item">
   <a class="gallery-link" href="large-image.jpg">
-    <img class="gallery"
-      src="${preview}"
-       data-source="${original}"
+    <img
+      class="gallery-image"
+      src="${preview}.jpg"
+      data-source="${original}"
       alt="${description}"
     />
   </a>
-</li> `).join("");
+</li>
+         `).join("");
  }
  console.log(createMarkup());
