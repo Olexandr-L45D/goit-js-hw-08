@@ -65,8 +65,24 @@ const images = [
 ];
 
  const galleryContainer = document.querySelector('.gallery');
-  galleryContainer.addEventListener('click', handlerImageClick);
   galleryContainer.insertAdjacentHTML("afterbegin", createMarkup(images));
+  
+  function createMarkup(arr) {
+    return arr.map(({ preview, original, description }) => `
+    <li class="gallery-item">
+  <a class="gallery-link" href="large-image.jpg">
+    <img
+      class="gallery-image"
+      src="${preview}"
+      data-source="${original}"
+      alt="${description}"
+    />
+  </a>
+</li> `).join("");
+ }
+ console.log(createMarkup());
+ 
+  galleryContainer.addEventListener('click', handlerImageClick);
   
    function handlerImageClick(event) {
     event.preventDefault()
@@ -82,18 +98,3 @@ const images = [
     />`)
    instance.show();
 }
-
-   function createMarkup(arr) {
-    return arr.map(({ preview, original, description }) => `
-    <li class="gallery-item">
-  <a class="gallery-link" href="large-image.jpg">
-    <img
-      class="gallery-image"
-      src="${preview}"
-      data-source="${original}"
-      alt="${description}"
-    />
-  </a>
-</li> `).join("");
- }
- console.log(createMarkup());
