@@ -65,36 +65,29 @@ const images = [
 ];
 
  const galleryContainer = document.querySelector('.gallery');
-  galleryContainer.insertAdjacentHTML("afterbegin", createMarkup(images));
   
   function createMarkup(images) {
-    return images.map(({ preview, original, description }) => `
+    return images.map(image => `
     <li class="gallery-item">
-  <a class="gallery-link" href="large-image.jpg">
+  <a class="gallery-link" href="${image.original}">
     <img
       class="gallery-image"
-      src="${preview}"
-      data-source="${original}"
-      alt="${description}"
+      src="${image.preview}"
+      data-source="${image.original}"
+      alt="${image.description}"
     />
   </a>
 </li> `).join("");
  }
  
-
-  galleryContainer.addEventListener('click', handlerImageClick);
+ galleryContainer.insertAdjacentHTML("afterbegin", createMarkup(images));
+  galleryContainer.addEventListener('click', (event) => {
+    event.preventDefault();
+    if (event.target.classList.contains('gallery-image')) {
+      const lagesImages = event.target.dataset.source;
+      console.log(lagesImages);
   
-   function handlerImageClick(event) {
-    event.preventDefault()
-    if (event.target === event.currentTarget) {
-        return;
-    } 
-   // console.log(target);
-   
    const instance = basicLightbox.create(
-     `<img class="gallery-image"
-       data-source="${galleryContainer.original}"
-      alt="${galleryContainer.description}"
-    />`)
-   instance.show();
-}
+     `<img src="${lagesImages}">`);
+   instance.show();} 
+  })
